@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
-
+    tools:context=".otp">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,8 +20,6 @@
         android:text="Need Help?"
         android:textColor="#939393"
         android:textStyle="bold" />
-
-
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView1"
@@ -41,9 +38,8 @@
         app:lottie_loop="true" />
 
 
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -58,38 +54,10 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="400dp"
-        android:fontFamily="@font/kanit_thin"
-        android:text="Enter your Mobile Number"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-50dp"
-        app:ccp_contentColor="@color/black"
-        app:ccp_padding="0dp">
-
-    </com.hbb20.CountryCodePicker>
 
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/otpenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -105,17 +73,19 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="267dp"
         android:background="@drawable/number"
-        android:digits="0123456789"
         android:drawableStart="@drawable/phone_icon"
         android:drawableLeft="@drawable/phone_icon"
+        android:ems="10"
+        android:digits="1234567890"
+        android:maxLength="6"
         android:fontFamily="@font/cousine"
-        android:inputType="number"
-        android:maxLength="11"
+        android:inputType="phone"
         android:textColor="@color/black"
+
         />
 
     <ImageButton
-        android:id="@+id/button"
+        android:id="@+id/otpsubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -133,29 +103,90 @@
         android:layout_marginBottom="167dp"
         android:background="@drawable/continuebutton" />
 
-    <TextView
-        android:id="@+id/textView3"
+
+
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kanit_thin"
+            android:text="Enter Your 6 Digit OTP"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.tuyenmonkey.mkloader.MKLoader
+            android:id="@+id/loader"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:fontFamily="@font/kanit_thin"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:mk_color="@color/black"
+            app:mk_type="FishSpinner" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:fontFamily="@font/cambo"
-        android:text="Jurassic Park is a 1993 American science fiction action film directed by Steven Spielberg and produced by Kathleen Kennedy and Gerald R. Molen."
-        android:textColor="#BDBFC1"
-        android:textSize="10sp"
-        android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="130dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/averia_libre_light"
+            android:text="Don't Recived The Code ?"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/averia_libre_light"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
 
+    </LinearLayout>
 
 
 
 
 </RelativeLayout>
+
